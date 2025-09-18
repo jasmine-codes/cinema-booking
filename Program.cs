@@ -1,2 +1,17 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿//variables supporting data entry
+string? readResult;
+string menuSelection = "";
+
+do
+{
+    Console.Clear();
+
+    Console.WriteLine("Welcome to Butter & Reel. Your main menu options are:");
+    Console.WriteLine(" 1) View Movies and Showtimes");
+    Console.WriteLine(" 2) Book a Seat");
+    Console.WriteLine(" 3) Order Snacks");
+    Console.WriteLine(" 4) View Current Booking Summary");
+    Console.WriteLine(" 5) Apply Membership Discount");
+    Console.WriteLine(" 6) Exit");
+
+} while (menuSelection != "exit");
