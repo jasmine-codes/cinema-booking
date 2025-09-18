@@ -13,5 +13,7 @@ do
     Console.WriteLine(" 4) View Current Booking Summary");
     Console.WriteLine(" 5) Apply Membership Discount");
     Console.WriteLine(" 6) Exit");
+    Console.WriteLine();
+    Console.WriteLine("Please enter a selection number (or type Exit to leave the application)");
 
 } while (menuSelection != "exit");
