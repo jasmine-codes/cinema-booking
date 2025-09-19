@@ -1,4 +1,8 @@
-﻿//variables supporting data entry
+﻿//variables
+string[] movieTitles = {"Jaws", "The Conjuring", "The Thing", "Alien", "Texas Chainsaw Massacre"};
+string[][] movieShowtime = {};
+
+//variables supporting data entry
 string? readResult;
 string menuSelection = "";
 
@@ -18,6 +22,13 @@ do
 
     readResult = Console.ReadLine();
     if (readResult != null) menuSelection = readResult.ToLower();
+
+    //process selected menu option
+    switch (menuSelection)
+    {
+        case "1":
+
+    }
 
 } while (menuSelection != "exit");
 
