@@ -1,0 +1,15 @@
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/bin/Debug/net9.0/CinemaBooking
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/bin/Debug/net9.0/CinemaBooking.deps.json
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/bin/Debug/net9.0/CinemaBooking.runtimeconfig.json
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/bin/Debug/net9.0/CinemaBooking.dll
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/bin/Debug/net9.0/CinemaBooking.pdb
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/obj/Debug/net9.0/CinemaBooking.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/obj/Debug/net9.0/CinemaBooking.AssemblyInfoInputs.cache
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/obj/Debug/net9.0/CinemaBooking.AssemblyInfo.cs
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/obj/Debug/net9.0/CinemaBooking.csproj.CoreCompileInputs.cache
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/obj/Debug/net9.0/CinemaBooking.sourcelink.json
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/obj/Debug/net9.0/CinemaBooking.dll
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/obj/Debug/net9.0/refint/CinemaBooking.dll
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/obj/Debug/net9.0/CinemaBooking.pdb
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/obj/Debug/net9.0/CinemaBooking.genruntimeconfig.cache
+/Users/jasminelee/Documents/Code/CsharpProjects/CinemaBooking/obj/Debug/net9.0/ref/CinemaBooking.dll

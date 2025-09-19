@@ -16,4 +16,13 @@ do
     Console.WriteLine();
     Console.WriteLine("Please enter a selection number (or type Exit to leave the application)");
 
+    readResult = Console.ReadLine();
+    if (readResult != null) menuSelection = readResult.ToLower();
+
 } while (menuSelection != "exit");
+
+#region Methods
+
+
+
+#endregion
