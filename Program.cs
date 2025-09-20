@@ -11,6 +11,14 @@ string[][] movieShowtimes = {
 //seats
 string[,] seats = new string[5, 5];
 
+for (int row = 0; row < 5; row++)
+{
+    for (int col = 0; col < 5; col++)
+    {
+        seats[row, col] = "O";
+    }
+}
+
 //variables supporting data entry
 string? readResult;
 string menuSelection = "";
