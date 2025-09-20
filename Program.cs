@@ -73,8 +73,11 @@ void DisplaySeats(string[,] layout)
         {
             Console.Write(layout[row, col] + " ");
         }
+        Console.WriteLine();
     }
-    Console.WriteLine();
+
+    Console.WriteLine("Press the Enter key to continue");
+    readResult = Console.ReadLine();
 }
 
 #endregion
