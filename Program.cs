@@ -8,6 +8,9 @@ string[][] movieShowtimes = {
     new string[] {"13:00", "16:30", "21:00"}
 };
 
+//seats
+string[,] seats = new string[5, 5];
+
 //variables supporting data entry
 string? readResult;
 string menuSelection = "";
@@ -56,6 +59,11 @@ void ShowMovies()
 
     Console.WriteLine("Press the Enter key to continue");
     readResult = Console.ReadLine();
+}
+
+void BookSeats()
+{
+    
 }
 
 #endregion
