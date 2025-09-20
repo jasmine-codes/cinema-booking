@@ -38,6 +38,10 @@ do
         case "1":
             ShowMovies();
             break;
+
+        case "2":
+        DisplaySeats(seats);
+        break;
     }
 
 } while (menuSelection != "exit");
@@ -61,9 +65,16 @@ void ShowMovies()
     readResult = Console.ReadLine();
 }
 
-void BookSeats()
+void DisplaySeats(string[,] layout)
 {
-    
+    for (int row = 0; row < layout.GetLength(0); row++)
+    {
+        for (int col = 0; col < layout.GetLength(1); col++)
+        {
+            Console.Write(layout[row, col] + " ");
+        }
+    }
+    Console.WriteLine();
 }
 
 #endregion
