@@ -80,7 +80,7 @@ void DisplaySeats(string[,] layout)
     {
         for (int col = 0; col < layout.GetLength(1); col++)
         {
-            Console.Write(layout[row, col] + " ");
+            Console.Write(layout[row, col] + "\t");
         }
         Console.WriteLine();
     }
