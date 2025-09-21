@@ -15,7 +15,8 @@ for (int row = 0; row < 5; row++)
 {
     for (int col = 0; col < 5; col++)
     {
-        seats[row, col] = "O";
+        char rowLetter = (char) ('A' + row);
+        seats[row, col] = rowLetter.ToString() + (col + 1);
     }
 }
 
