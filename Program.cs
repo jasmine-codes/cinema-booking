@@ -21,7 +21,7 @@ for (int row = 0; row < 5; row++)
 {
     for (int col = 0; col < 5; col++)
     {
-        char rowLetter = (char) ('A' + row);
+        char rowLetter = (char)('A' + row);
         seats[row, col] = rowLetter.ToString() + (col + 1);
     }
 }
@@ -51,10 +51,8 @@ do
             break;
 
         case "2":
-        DisplaySeats(seats);
-        BookSeats();
-        DisplaySeats(seats);
-        break;
+            DisplaySeats(seats);
+            break;
     }
 
 } while (menuSelection != "exit");
@@ -89,8 +87,21 @@ void DisplaySeats(string[,] layout)
         Console.WriteLine();
     }
 
-    Console.WriteLine("Press the Enter key to continue");
+    Console.WriteLine("Would you like to book a seat? (y/n)");
     readResult = Console.ReadLine();
+    string bookSeat = "";
+
+    if (readResult != null) bookSeat = readResult.ToLower();
+
+    if (readResult == "y")
+    {
+        BookSeats();
+    }
+    else
+    {
+        Console.WriteLine("Press the Enter key to continue");
+        readResult = Console.ReadLine();
+    }
 }
 
 void BookSeats()
@@ -113,6 +124,8 @@ void BookSeats()
     }
 
     if (!booked) Console.WriteLine("That seat is not available.");
+
+    DisplaySeats(seats);
 }
 
 #endregion
