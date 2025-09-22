@@ -52,6 +52,8 @@ do
 
         case "2":
         DisplaySeats(seats);
+        BookSeats();
+        DisplaySeats(seats);
         break;
     }
 
@@ -91,17 +93,26 @@ void DisplaySeats(string[,] layout)
     readResult = Console.ReadLine();
 }
 
-string BookSeats()
+void BookSeats()
 {
     Console.Write("Enter the seat you want (e.g. B3): ");
     readResult = Console.ReadLine();
     if (readResult != null) chosenSeat = readResult.ToUpper();
 
-    for (int row = 0; row < )
+    for (int row = 0; row < 5; row++)
+    {
+        for (int col = 0; col < 5; col++)
+        {
+            if (seats[row, col] == chosenSeat)
+            {
+                seats[row, col] = "X";
+                Console.WriteLine("Seat booked successfully!");
+                booked = true;
+            }
+        }
+    }
 
-
-
-    return chosenSeat;
+    if (!booked) Console.WriteLine("That seat is not available.");
 }
 
 #endregion
