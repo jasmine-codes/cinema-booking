@@ -8,6 +8,12 @@ string[][] movieShowtimes = {
     new string[] {"13:00", "16:30", "21:00"}
 };
 
+//variables supporting data entry
+string? readResult;
+string menuSelection = "";
+string chosenSeat = "";
+bool booked = false;
+
 //seats
 string[,] seats = new string[5, 5];
 
@@ -19,10 +25,6 @@ for (int row = 0; row < 5; row++)
         seats[row, col] = rowLetter.ToString() + (col + 1);
     }
 }
-
-//variables supporting data entry
-string? readResult;
-string menuSelection = "";
 
 do
 {
@@ -87,6 +89,19 @@ void DisplaySeats(string[,] layout)
 
     Console.WriteLine("Press the Enter key to continue");
     readResult = Console.ReadLine();
+}
+
+string BookSeats()
+{
+    Console.Write("Enter the seat you want (e.g. B3): ");
+    readResult = Console.ReadLine();
+    if (readResult != null) chosenSeat = readResult.ToUpper();
+
+    for (int row = 0; row < )
+
+
+
+    return chosenSeat;
 }
 
 #endregion
