@@ -26,9 +26,10 @@ for (int row = 0; row < 5; row++)
     }
 }
 
-//snacks
+//snack data
 string[] snacks = {"Popcorn", "Coca-Cola", "M&Ms", "Nachos", "Hot Dog"};
-decimal[] snackPrices = {};
+decimal[] snackPrices = {5.00m, 3.00m, 2.50m, 5.00m, 4.00m};
+int[] snackQuantities = new int[snacks.Length];
 
 do
 {
