@@ -27,8 +27,8 @@ for (int row = 0; row < 5; row++)
 }
 
 //snack data
-string[] snacks = {"Popcorn", "Coca-Cola", "M&Ms", "Nachos", "Hot Dog"};
-decimal[] snackPrices = {5.00m, 3.00m, 2.50m, 5.00m, 4.00m};
+string[] snacks = { "🍿 Popcorn", "🥤 Coca-Cola", "🍫 M&Ms", "🌮 Nachos", "🌭 Hot Dog" };
+decimal[] snackPrices = { 5.00m, 3.00m, 2.50m, 5.00m, 4.00m };
 int[] snackQuantities = new int[snacks.Length];
 
 do
@@ -57,6 +57,10 @@ do
 
         case "2":
             DisplaySeats(seats);
+            break;
+
+        case "3":
+            DisplaySnackMenu(snacks, snackPrices);
             break;
     }
 
@@ -131,6 +135,18 @@ void BookSeats()
     if (!booked) Console.WriteLine("That seat is not available.");
 
     DisplaySeats(seats);
+}
+
+void DisplaySnackMenu(string[] names, decimal[] prices)
+{
+    Console.WriteLine("Available snacks:");
+    for (int i = 0; i < names.Length; i++)
+    {
+        Console.WriteLine($"{i + 1}. {names[i]} - ${prices[i]:F2}");
+    }
+
+    Console.WriteLine("Would you like to buy snacks? (y/n)");
+    readResult = Console.ReadLine();
 }
 
 #endregion
