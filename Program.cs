@@ -14,7 +14,7 @@ string menuSelection = "";
 string chosenSeat = "";
 bool booked = false;
 
-//seats
+//initialise seats
 string[,] seats = new string[5, 5];
 
 for (int row = 0; row < 5; row++)
@@ -25,6 +25,10 @@ for (int row = 0; row < 5; row++)
         seats[row, col] = rowLetter.ToString() + (col + 1);
     }
 }
+
+//snacks
+string[] snacks = {"Popcorn", "Coca-Cola", "M&Ms", "Nachos", "Hot Dog"};
+decimal[] snackPrices = {};
 
 do
 {
