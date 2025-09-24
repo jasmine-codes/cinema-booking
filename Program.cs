@@ -27,7 +27,7 @@ for (int row = 0; row < 5; row++)
 }
 
 //snack data
-string[] snacks = { "🍿 Popcorn", "🥤 Coca-Cola", "🍫 M&Ms", "🌮 Nachos", "🌭 Hot Dog" };
+string[] snacks = { "1) 🍿 Popcorn", "2) 🥤 Coca-Cola", "3) 🍫 M&Ms", "4) 🌮 Nachos", "5) 🌭 Hot Dog" };
 decimal[] snackPrices = { 5.00m, 3.00m, 2.50m, 5.00m, 4.00m };
 int[] snackQuantities = new int[snacks.Length];
 
@@ -60,7 +60,7 @@ do
             break;
 
         case "3":
-            OrderSnacks();
+            OrderSnacks(snacks, snackPrices, snackQuantities);
             break;
     }
 
@@ -148,13 +148,20 @@ void DisplaySnackMenu(string[] names, decimal[] prices)
     Console.WriteLine();
 }
 
-decimal OrderSnacks()
+decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
 {
     DisplaySnackMenu(snacks, snackPrices);
 
     while (true)
     {
-        Console.Write("");
+        Console.Write("Enter snack number to add (0 to finish): ");
+        readResult = Console.ReadLine();
+
+        if (!int.TryParse(readResult, out int choice))
+        {
+            Console.WriteLine("");
+        }
+
     }
     return 0.00m;
 }
