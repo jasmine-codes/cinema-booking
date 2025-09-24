@@ -27,7 +27,7 @@ for (int row = 0; row < 5; row++)
 }
 
 //snack data
-string[] snacks = { "1) 🍿 Popcorn", "2) 🥤 Coca-Cola", "3) 🍫 M&Ms", "4) 🌮 Nachos", "5) 🌭 Hot Dog" };
+string[] snacks = { "🍿 Popcorn", "🥤 Coca-Cola", "🍫 M&Ms", "🌮 Nachos", "🌭 Hot Dog" };
 decimal[] snackPrices = { 5.00m, 3.00m, 2.50m, 5.00m, 4.00m };
 int[] snackQuantities = new int[snacks.Length];
 
@@ -159,11 +159,11 @@ decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
 
         if (!int.TryParse(readResult, out int choice))
         {
-            Console.WriteLine("");
+            Console.WriteLine("Please enter a valid number.");
+            continue;
         }
 
     }
-    return 0.00m;
 }
 
 #endregion
