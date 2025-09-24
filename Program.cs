@@ -60,7 +60,7 @@ do
             break;
 
         case "3":
-            DisplaySnackMenu(snacks, snackPrices);
+            OrderSnacks();
             break;
     }
 
@@ -145,8 +145,18 @@ void DisplaySnackMenu(string[] names, decimal[] prices)
         Console.WriteLine($"{i + 1}. {names[i]} - ${prices[i]:F2}");
     }
 
-    Console.WriteLine("Would you like to buy snacks? (y/n)");
-    readResult = Console.ReadLine();
+    Console.WriteLine();
+}
+
+decimal OrderSnacks()
+{
+    DisplaySnackMenu(snacks, snackPrices);
+
+    while (true)
+    {
+        Console.Write("");
+    }
+    return 0.00m;
 }
 
 #endregion
