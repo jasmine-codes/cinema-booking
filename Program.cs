@@ -177,6 +177,9 @@ decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
         }
 
         // 2. order quantity
+        int index = choice - 1; //convert to 0-based index
+
+        Console.Write($"How many {names[index]} would you like? ");
     }
 
     return 0.00m; //change
