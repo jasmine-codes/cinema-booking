@@ -190,6 +190,10 @@ decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
             Console.WriteLine("Please enter a positive integer quantity.");
             continue;
         }
+
+        quantities[index] += quantity;
+        decimal lineTotal = prices[index] * quantity;
+        Console.WriteLine($"{quantity} x {names[index]} added to cart - line total: ${lineTotal:F2}\n");
     }
 
     return 0.00m; //change
