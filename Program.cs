@@ -180,6 +180,16 @@ decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
         int index = choice - 1; //convert to 0-based index
 
         Console.Write($"How many {names[index]} would you like? ");
+        readResult = Console.ReadLine();
+        string quantityInput = "";
+
+        if (readResult != null) quantityInput = readResult;
+
+        if (!int.TryParse(quantityInput, out int quantity) || quantity <= 0)
+        {
+            Console.WriteLine("Please enter a positive integer quantity.");
+            continue;
+        }
     }
 
     return 0.00m; //change
