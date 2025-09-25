@@ -1,4 +1,6 @@
 ﻿//variables
+using Microsoft.Win32.SafeHandles;
+
 string[] movieTitles = { "Jaws", "The Conjuring", "The Thing", "Alien", "Texas Chainsaw Massacre" };
 string[][] movieShowtimes = {
     new string[] {"12:00", "16:30", "21:00"},
@@ -154,6 +156,7 @@ decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
 
     while (true)
     {
+        // 1. Choose snack number
         Console.Write("Enter snack number to add (0 to finish): ");
         readResult = Console.ReadLine();
 
@@ -163,7 +166,20 @@ decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
             continue;
         }
 
+        // done ordering
+        if (choice == 0) break;
+
+        // snack number should exist
+        if (choice < 0 || choice > names.Length)
+        {
+            Console.WriteLine("That snack number doesn't exist. Try again.");
+            continue;
+        }
+
+        // 2. order quantity
     }
+
+    return 0.00m; //change
 }
 
 #endregion
