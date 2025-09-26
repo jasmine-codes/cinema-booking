@@ -196,7 +196,16 @@ decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
         Console.WriteLine($"{quantity} x {names[index]} added to cart - line total: ${lineTotal:F2}\n");
     }
 
-    return 0.00m; //change
+    decimal subtotal = 0m;
+    bool any = false;
+    Console.WriteLine("\n--- Snack Summary ---");
+    for (int i = 0; i < names.Length; i++)
+    {
+        if (quantities[i] > 0)
+        {
+            
+        }
+    }
 }
 
 #endregion
