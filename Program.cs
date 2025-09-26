@@ -211,6 +211,10 @@ decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
     }
 
     if (!any) Console.WriteLine("No snacks selected.");
+
+    Console.WriteLine($"Snacks subtotal: ${subtotal:F2}");
+    Console.WriteLine("---------------------\n");
+    return subtotal;
 }
 
 #endregion
