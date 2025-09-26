@@ -203,9 +203,14 @@ decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
     {
         if (quantities[i] > 0)
         {
-            
+            any = true;
+            decimal line = quantities[i] * prices[i];
+            Console.WriteLine($"{quantities[i]} x {names[i]} @ ${prices[i]:F2} = ${line:F2}");
+            subtotal += line;
         }
     }
+
+    if (!any) Console.WriteLine("No snacks selected.");
 }
 
 #endregion
