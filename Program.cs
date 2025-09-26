@@ -152,7 +152,7 @@ void DisplaySnackMenu(string[] names, decimal[] prices)
 
 decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
 {
-    DisplaySnackMenu(snacks, snackPrices);
+    DisplaySnackMenu(names, prices);
 
     while (true)
     {
@@ -214,6 +214,7 @@ decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
 
     Console.WriteLine($"Snacks subtotal: ${subtotal:F2}");
     Console.WriteLine("---------------------\n");
+    Console.ReadKey();
     return subtotal;
 }
 
