@@ -111,6 +111,13 @@ string ChooseMovie(string[] titles, string[][] showtimes)
             Console.WriteLine("That movie number doesn't exist. Try again.");
             continue;
         }
+
+        int index = movieChoice - 1;
+
+        Console.Write($"You chose {titles[index]}. Select a time: ");
+        readResult = Console.ReadLine();
+
+        //continue here
     }
 
     return chosenMovie;
