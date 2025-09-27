@@ -1,4 +1,4 @@
-﻿//variables
+﻿//movie data
 using Microsoft.Win32.SafeHandles;
 
 string[] movieTitles = { "Jaws", "The Conjuring", "The Thing", "Alien", "Texas Chainsaw Massacre" };
@@ -13,6 +13,7 @@ string[][] movieShowtimes = {
 //variables supporting data entry
 string? readResult;
 string menuSelection = "";
+string chosenMovie = "";
 string chosenSeat = "";
 bool booked = false;
 
@@ -54,7 +55,7 @@ do
     switch (menuSelection)
     {
         case "1":
-            ShowMovies();
+            ChooseMovie(movieTitles, movieShowtimes);
             break;
 
         case "2":
@@ -70,7 +71,7 @@ do
 
 #region Methods
 
-void ShowMovies()
+void ShowMovies(string[] titles, string[][] showtimes)
 {
     for (int i = 0; i < movieTitles.Length; i++)
     {
@@ -85,6 +86,13 @@ void ShowMovies()
 
     Console.WriteLine("Press the Enter key to continue");
     readResult = Console.ReadLine();
+}
+
+string ChooseMovie(string[] titles, string[][] showtimes)
+{
+    ShowMovies(titles, showtimes);
+
+    return "";
 }
 
 void DisplaySeats(string[,] layout)
