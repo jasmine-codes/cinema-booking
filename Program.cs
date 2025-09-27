@@ -1,4 +1,5 @@
 ﻿//movie data
+using System.Net;
 using Microsoft.Win32.SafeHandles;
 
 string[] movieTitles = { "Jaws", "The Conjuring", "The Thing", "Alien", "Texas Chainsaw Massacre" };
@@ -92,12 +93,16 @@ string ChooseMovie(string[] titles, string[][] showtimes)
 {
     ShowMovies(titles, showtimes);
 
-    Console.Write("Choose movie number (0 to finish): ");
-    readResult = Console.ReadLine();
-
-    if (!int.TryParse(readResult, out int movieChoice))
+    while (true)
     {
-        Console.WriteLine();
+        Console.Write("Choose movie number (0 to finish): ");
+        readResult = Console.ReadLine();
+
+        if (!int.TryParse(readResult, out int movieChoice))
+        {
+            Console.WriteLine("Please enter a valid number.");
+            continue;
+        }
     }
 
     return "";
