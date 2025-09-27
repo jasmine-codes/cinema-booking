@@ -103,9 +103,17 @@ string ChooseMovie(string[] titles, string[][] showtimes)
             Console.WriteLine("Please enter a valid number.");
             continue;
         }
+
+        if (movieChoice == 0) break;
+
+        if (movieChoice < 0 || movieChoice > titles.Length)
+        {
+            Console.WriteLine("That movie number doesn't exist. Try again.");
+            continue;
+        }
     }
 
-    return "";
+    return chosenMovie;
 }
 
 void DisplaySeats(string[,] layout)
