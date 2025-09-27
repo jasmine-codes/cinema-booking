@@ -92,6 +92,14 @@ string ChooseMovie(string[] titles, string[][] showtimes)
 {
     ShowMovies(titles, showtimes);
 
+    Console.Write("Choose movie number (0 to finish): ");
+    readResult = Console.ReadLine();
+
+    if (!int.TryParse(readResult, out int movieChoice))
+    {
+        Console.WriteLine();
+    }
+
     return "";
 }
 
