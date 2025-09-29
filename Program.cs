@@ -115,8 +115,11 @@ string ChooseMovie(string[] titles, string[][] showtimes)
 
         int index = movieChoice - 1;
 
+        //choose showtime
         Console.Write($"You chose {titles[index]}. Select a time: ");
         Console.WriteLine($"{showtimes[index]}");
+        readResult = Console.ReadLine();
+        
     }
 
     return chosenMovie;
