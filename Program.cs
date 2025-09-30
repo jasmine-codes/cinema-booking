@@ -15,6 +15,7 @@ string[][] movieShowtimes = {
 string? readResult;
 string menuSelection = "";
 string chosenMovie = "";
+string chosenShowtime = "";
 string chosenSeat = "";
 bool booked = false;
 
@@ -114,9 +115,10 @@ string ChooseMovie(string[] titles, string[][] showtimes)
         }
 
         int index = movieChoice - 1;
+        chosenMovie = titles[index];
 
         //choose showtime
-        Console.WriteLine($"You chose {titles[index]}. Select a time: ");
+        Console.WriteLine($"You chose {chosenMovie}. Select a time: ");
 
         foreach (string time in showtimes[index])
         {
@@ -127,7 +129,19 @@ string ChooseMovie(string[] titles, string[][] showtimes)
 
         if (int.TryParse(readResult, out int timeChoice))
         {
-            
+            if (timeChoice > 0 && timeChoice <= showtimes[index].Length)
+            {
+                chosenShowtime = showtimes[index][timeChoice - 1];
+                Console.WriteLine($"You picked {chosenMovie} at {chosenShowtime}");
+            }
+            else
+            {
+                Console.WriteLine("That showtime doesn't exist.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Please enter a valid time.");
         }
 
     }
