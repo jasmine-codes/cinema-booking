@@ -117,12 +117,18 @@ string ChooseMovie(string[] titles, string[][] showtimes)
 
         //choose showtime
         Console.WriteLine($"You chose {titles[index]}. Select a time: ");
+
         foreach (string time in showtimes[index])
         {
             Console.WriteLine(time);
         }
 
         readResult = Console.ReadLine();
+
+        if (int.TryParse(readResult, out int timeChoice))
+        {
+            
+        }
 
     }
 
