@@ -111,13 +111,13 @@ void ShowMovies(string[] titles, string[][] showtimes)
             continue;
         }
 
-        int index = movieChoice - 1;
-        chosenMovie = titles[index];
+        int indexMovie = movieChoice - 1;
+        chosenMovie = titles[indexMovie];
 
         //choose showtime
         Console.WriteLine($"You chose {chosenMovie}. Select a time (0 to finish): ");
 
-        foreach (string time in showtimes[index])
+        foreach (string time in showtimes[indexMovie])
         {
             Console.WriteLine(time);
         }
@@ -131,10 +131,14 @@ void ShowMovies(string[] titles, string[][] showtimes)
 
         if (timeChoice == 0) break;
 
-        if (timeChoice < 0 || timeChoice > showtimes[index].Length)
+        if (timeChoice < 0 || timeChoice > showtimes[indexMovie].Length)
         {
-            
+            Console.WriteLine("That time doesn't exist. Try again.");
+            continue;
         }
+
+        int indexTime = timeChoice - 1;
+        chosenShowtime = showtimes[indexMovie][indexTime];
 
         // if (int.TryParse(readResult, out int timeChoice))
         // {
