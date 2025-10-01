@@ -140,25 +140,6 @@ void ShowMovies(string[] titles, string[][] showtimes)
         int indexTime = timeChoice - 1;
         chosenShowtime = showtimes[indexMovie][indexTime];
 
-        // if (int.TryParse(readResult, out int timeChoice))
-        // {
-        //     if (timeChoice > 0 && timeChoice <= showtimes[index].Length)
-        //     {
-        //         chosenShowtime = showtimes[index][timeChoice - 1];
-        //         Console.WriteLine($"You picked {chosenMovie} at {chosenShowtime}");
-        //         Console.WriteLine("Press the Enter key to continue"); //continue here - fix it
-        //         readResult = Console.ReadLine();
-        //     }
-        //     else
-        //     {
-        //         Console.WriteLine("That showtime doesn't exist.");
-        //     }
-        // }
-        // else
-        // {
-        //     Console.WriteLine("Please enter a valid time.");
-        // }
-
     }
 
     return (chosenMovie, chosenShowtime);
