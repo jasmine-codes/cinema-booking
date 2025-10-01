@@ -85,12 +85,9 @@ void ShowMovies(string[] titles, string[][] showtimes)
         }
         Console.WriteLine();
     }
-
-    // Console.WriteLine("Press the Enter key to continue");
-    // readResult = Console.ReadLine();
 }
 
-string ChooseMovie(string[] titles, string[][] showtimes)
+(string movie, string showtime) ChooseMovie(string[] titles, string[][] showtimes)
 {
     ShowMovies(titles, showtimes);
 
@@ -118,7 +115,7 @@ string ChooseMovie(string[] titles, string[][] showtimes)
         chosenMovie = titles[index];
 
         //choose showtime
-        Console.WriteLine($"You chose {chosenMovie}. Select a time: ");
+        Console.WriteLine($"You chose {chosenMovie}. Select a time (0 to finish): ");
 
         foreach (string time in showtimes[index])
         {
@@ -127,26 +124,40 @@ string ChooseMovie(string[] titles, string[][] showtimes)
 
         readResult = Console.ReadLine();
 
-        if (int.TryParse(readResult, out int timeChoice))
+        if (!int.TryParse(readResult, out int timeChoice))
         {
-            if (timeChoice > 0 && timeChoice <= showtimes[index].Length)
-            {
-                chosenShowtime = showtimes[index][timeChoice - 1];
-                Console.WriteLine($"You picked {chosenMovie} at {chosenShowtime}");
-            }
-            else
-            {
-                Console.WriteLine("That showtime doesn't exist.");
-            }
+            Console.WriteLine("Please enter a valid number.");
         }
-        else
+
+        if (timeChoice == 0) break;
+
+        if (timeChoice < 0 || timeChoice > showtimes[index].Length)
         {
-            Console.WriteLine("Please enter a valid time.");
+            
         }
+
+        // if (int.TryParse(readResult, out int timeChoice))
+        // {
+        //     if (timeChoice > 0 && timeChoice <= showtimes[index].Length)
+        //     {
+        //         chosenShowtime = showtimes[index][timeChoice - 1];
+        //         Console.WriteLine($"You picked {chosenMovie} at {chosenShowtime}");
+        //         Console.WriteLine("Press the Enter key to continue"); //continue here - fix it
+        //         readResult = Console.ReadLine();
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("That showtime doesn't exist.");
+        //     }
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Please enter a valid time.");
+        // }
 
     }
 
-    return chosenMovie;
+    return (chosenMovie, chosenShowtime);
 }
 
 void DisplaySeats(string[,] layout)
