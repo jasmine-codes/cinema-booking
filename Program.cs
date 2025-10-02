@@ -146,8 +146,6 @@ void ShowMovies(string[] titles, string[][] showtimes)
 
     }
 
-    //TODO: if movie booked = charge $9.75, display chosenMovie and chosenShowtime, refine method
-
     return (chosenMovie, chosenShowtime);
 }
 
@@ -280,6 +278,19 @@ decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
     Console.WriteLine("---------------------\n");
     Console.ReadKey();
     return subtotal;
+}
+
+decimal ViewBookingSummary(
+    string movie,
+    string time,
+    string seat,
+    bool movieBooked,
+    string[] snacks,
+    decimal[] snackPrices,
+    int[] snackQuantities)
+{
+    Console.WriteLine("\n--- Current Booking Summary ---");
+    return 0;
 }
 
 #endregion
