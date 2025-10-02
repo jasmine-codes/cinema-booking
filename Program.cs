@@ -290,7 +290,14 @@ decimal ViewBookingSummary(
     int[] snackQuantities)
 {
     Console.WriteLine("\n--- Current Booking Summary ---");
-    return 0;
+
+    decimal ticketSubtotal = 0m;
+    decimal snackSubtotal = 0m;
+
+    
+
+
+    return 0m;
 }
 
 #endregion
