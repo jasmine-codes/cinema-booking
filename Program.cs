@@ -16,6 +16,7 @@ string? readResult;
 string menuSelection = "";
 string chosenMovie = "";
 string chosenShowtime = "";
+bool movieBooked = false;
 string chosenSeat = "";
 bool booked = false;
 
@@ -113,6 +114,7 @@ void ShowMovies(string[] titles, string[][] showtimes)
 
         int indexMovie = movieChoice - 1;
         chosenMovie = titles[indexMovie];
+        movieBooked = true;
 
         //choose showtime
         Console.WriteLine($"You chose {chosenMovie}. Select a time (0 to finish): ");
@@ -140,7 +142,11 @@ void ShowMovies(string[] titles, string[][] showtimes)
         int indexTime = timeChoice - 1;
         chosenShowtime = showtimes[indexMovie][indexTime];
 
+        Console.WriteLine($"Booking confirmed: {chosenMovie} at {chosenShowtime}");
+
     }
+
+    //TODO: if movie booked = charge $9.75, display chosenMovie and chosenShowtime, refine method
 
     return (chosenMovie, chosenShowtime);
 }
