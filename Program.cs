@@ -4,11 +4,11 @@ using Microsoft.Win32.SafeHandles;
 
 string[] movieTitles = { "Jaws", "The Conjuring", "The Thing", "Alien", "Texas Chainsaw Massacre" };
 string[][] movieShowtimes = {
-    new string[] {"1) 12:00", "2) 16:30", "3) 21:00"},
-    new string[] {"1) 13:00", "2) 18:00", "3) 23:00"},
-    new string[] {"1) 14:00", "2) 16:00", "3) 20:30"},
-    new string[] {"1) 12:30", "2) 15:30", "3) 21:00"},
-    new string[] {"1) 13:00", "2) 16:30", "3) 21:00"}
+    new string[] {"12:00", "16:30", "21:00"},
+    new string[] {"13:00", "18:00", "23:00"},
+    new string[] {"14:00", "16:00", "20:30"},
+    new string[] {"12:30", "15:30", "21:00"},
+    new string[] {"13:00", "16:30", "21:00"}
 };
 
 //variables supporting data entry
