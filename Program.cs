@@ -294,7 +294,18 @@ decimal ViewBookingSummary(
     decimal ticketSubtotal = 0m;
     decimal snackSubtotal = 0m;
 
-    
+    if (movieBooked)
+    {
+        ticketSubtotal = 9.75m;
+        Console.WriteLine($"🎬 Movie: {movie}");
+        Console.WriteLine($"⏰ Showtime: {time}");
+        Console.WriteLine($"💺 Seat: {seat}");
+        Console.WriteLine($"Ticket Price: ${ticketSubtotal:F2}\n");
+    }
+    else
+    {
+        Console.WriteLine("No movie booked yet.");
+    }
 
 
     return 0m;
