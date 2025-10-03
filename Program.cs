@@ -318,8 +318,15 @@ decimal ViewBookingSummary(
             anySnacks = true;
             decimal line = snackPrices[i] * snackQuantities[i];
             Console.WriteLine($"{snackQuantities[i]} x {snacks[i]} @ {snackPrices[i]:F2} = ${line:F2}");
+            snackSubtotal += line;
         }
     }
+
+    if (!anySnacks) Console.WriteLine("No snacks selected.");
+    Console.WriteLine($"Snacks subtotal: ${snackSubtotal:F2}");
+    Console.WriteLine("-------------------------------");
+
+    
 
     return 0m;
 }
