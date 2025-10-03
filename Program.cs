@@ -68,6 +68,10 @@ do
         case "3":
             OrderSnacks(snacks, snackPrices, snackQuantities);
             break;
+
+            case "4":
+            ViewBookingSummary(chosenMovie, chosenShowtime, chosenSeat, movieBooked, snacks, snackPrices, snackQuantities);
+            break;
     }
 
 } while (menuSelection != "exit");
@@ -331,8 +335,8 @@ decimal ViewBookingSummary(
     Console.WriteLine($"TOTAL (before discounts): ${grandTotal:F2}");
     Console.WriteLine("-------------------------------\n");
 
-    // Console.WriteLine("Press the Enter key to continue");
-    // readResult = Console.ReadLine();
+    Console.WriteLine("Press the Enter key to continue");
+    readResult = Console.ReadLine();
 
     return grandTotal;
 }
