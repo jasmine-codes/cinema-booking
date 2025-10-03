@@ -326,9 +326,15 @@ decimal ViewBookingSummary(
     Console.WriteLine($"Snacks subtotal: ${snackSubtotal:F2}");
     Console.WriteLine("-------------------------------");
 
-    
+    //Total
+    decimal grandTotal = ticketSubtotal + snackSubtotal;
+    Console.WriteLine($"TOTAL (before discounts): ${grandTotal:F2}");
+    Console.WriteLine("-------------------------------\n");
 
-    return 0m;
+    // Console.WriteLine("Press the Enter key to continue");
+    // readResult = Console.ReadLine();
+
+    return grandTotal;
 }
 
 #endregion
