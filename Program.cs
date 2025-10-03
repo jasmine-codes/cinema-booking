@@ -316,7 +316,8 @@ decimal ViewBookingSummary(
         if (snackQuantities[i] > 0)
         {
             anySnacks = true;
-            
+            decimal line = snackPrices[i] * snackQuantities[i];
+            Console.WriteLine($"{snackQuantities[i]} x {snacks[i]} @ {snackPrices[i]:F2} = ${line:F2}");
         }
     }
 
