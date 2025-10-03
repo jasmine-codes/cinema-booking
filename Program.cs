@@ -294,6 +294,7 @@ decimal ViewBookingSummary(
     decimal ticketSubtotal = 0m;
     decimal snackSubtotal = 0m;
 
+    // Movie + Ticket
     if (movieBooked)
     {
         ticketSubtotal = 9.75m;
@@ -307,6 +308,17 @@ decimal ViewBookingSummary(
         Console.WriteLine("No movie booked yet.");
     }
 
+    //Snacks
+    Console.WriteLine("--- Snacks ---");
+    bool anySnacks = false;
+    for (int i = 0; i < snacks.Length; i++)
+    {
+        if (snackQuantities[i] > 0)
+        {
+            anySnacks = true;
+            
+        }
+    }
 
     return 0m;
 }
