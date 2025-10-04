@@ -344,6 +344,15 @@ decimal ViewBookingSummary(
 decimal ApplyMembershipDiscount(decimal subtotal)
 {
 Console.Write("Are you a Butter & Reel member? (y/n): ");
+readResult = Console.ReadLine();
+string response = "";
+
+if (readResult != null) response = readResult.ToLower();
+
+if (response == y)
+{
+    
+}
 }
 
 #endregion
