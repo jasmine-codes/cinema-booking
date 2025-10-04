@@ -351,8 +351,12 @@ if (readResult != null) response = readResult.ToLower();
 
 if (response == y)
 {
-    
+    decimal discount = subtotal * 0.10m;
+    decimal totalAfterDiscount = subtotal - discount;
+    Console.WriteLine($"Membership discount applied: -${discount:F2}");
+    Console.WriteLine($"Final Total: ${totalAfterDiscount:F2}");
 }
+
 }
 
 #endregion
