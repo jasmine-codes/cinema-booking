@@ -355,6 +355,13 @@ if (response == y)
     decimal totalAfterDiscount = subtotal - discount;
     Console.WriteLine($"Membership discount applied: -${discount:F2}");
     Console.WriteLine($"Final Total: ${totalAfterDiscount:F2}");
+    return totalAfterDiscount;
+}
+else
+{
+    Console.WriteLine("No discount applied.");
+    Console.WriteLine($"Final Total: ${subtotal:F2}");
+    return subtotal;
 }
 
 }
