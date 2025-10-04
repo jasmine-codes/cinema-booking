@@ -19,6 +19,7 @@ string chosenShowtime = "";
 bool movieBooked = false;
 string chosenSeat = "";
 bool booked = false;
+decimal grandTotal = 0m;
 
 //initialise seats
 string[,] seats = new string[5, 5];
@@ -69,8 +70,12 @@ do
             OrderSnacks(snacks, snackPrices, snackQuantities);
             break;
 
-            case "4":
+        case "4":
             ViewBookingSummary(chosenMovie, chosenShowtime, chosenSeat, movieBooked, snacks, snackPrices, snackQuantities);
+            break;
+
+        case "5":
+            ApplyMembershipDiscount(grandTotal);
             break;
     }
 
@@ -331,7 +336,7 @@ decimal ViewBookingSummary(
     Console.WriteLine("-------------------------------");
 
     //Total
-    decimal grandTotal = ticketSubtotal + snackSubtotal;
+    grandTotal = ticketSubtotal + snackSubtotal;
     Console.WriteLine($"TOTAL (before discounts): ${grandTotal:F2}");
     Console.WriteLine("-------------------------------\n");
 
@@ -343,26 +348,30 @@ decimal ViewBookingSummary(
 
 decimal ApplyMembershipDiscount(decimal subtotal)
 {
-Console.Write("Are you a Butter & Reel member? (y/n): ");
-readResult = Console.ReadLine();
-string response = "";
+    Console.Write("Are you a Butter & Reel member? (y/n): ");
+    readResult = Console.ReadLine();
+    string response = "";
 
-if (readResult != null) response = readResult.ToLower();
+    if (readResult != null) response = readResult.ToLower();
 
-if (response == y)
-{
-    decimal discount = subtotal * 0.10m;
-    decimal totalAfterDiscount = subtotal - discount;
-    Console.WriteLine($"Membership discount applied: -${discount:F2}");
-    Console.WriteLine($"Final Total: ${totalAfterDiscount:F2}");
-    return totalAfterDiscount;
-}
-else
-{
-    Console.WriteLine("No discount applied.");
-    Console.WriteLine($"Final Total: ${subtotal:F2}");
-    return subtotal;
-}
+    if (response == "y")
+    {
+        decimal discount = subtotal * 0.10m;
+        decimal totalAfterDiscount = subtotal - discount;
+        Console.WriteLine($"Membership discount applied: -${discount:F2}");
+        Console.WriteLine($"Final Total: ${totalAfterDiscount:F2}");
+        Console.WriteLine("Press the Enter key to continue");
+        readResult = Console.ReadLine();
+        return totalAfterDiscount;
+    }
+    else
+    {
+        Console.WriteLine("No discount applied.");
+        Console.WriteLine($"Final Total: ${subtotal:F2}");
+        Console.WriteLine("Press the Enter key to continue");
+        readResult = Console.ReadLine();
+        return subtotal;
+    }
 
 }
 
