@@ -16,7 +16,7 @@ string? readResult;
 string menuSelection = "";
 string chosenMovie = "";
 string chosenShowtime = "";
-bool movieBooked = false;
+bool seatBooked = false;
 List<string> chosenSeats = new List<string>();
 decimal grandTotal = 0m;
 
@@ -70,7 +70,7 @@ do
             break;
 
         case "4":
-            ViewBookingSummary(chosenMovie, chosenShowtime, chosenSeats, movieBooked, snacks, snackPrices, snackQuantities);
+            ViewBookingSummary(chosenMovie, chosenShowtime, chosenSeats, seatBooked, snacks, snackPrices, snackQuantities);
             break;
 
         case "5":
@@ -122,7 +122,6 @@ void ShowMovies(string[] titles, string[][] showtimes)
 
         int indexMovie = movieChoice - 1;
         chosenMovie = titles[indexMovie];
-        movieBooked = true;
 
         //choose showtime
         Console.WriteLine($"You chose {chosenMovie}. Select a time (0 to finish): ");
@@ -168,7 +167,8 @@ void DisplaySeats(string[,] layout, List<string> bookedSeats)
         Console.WriteLine();
     }
 
-    Console.WriteLine("Would you like to book a seat? (y/n)");
+    Console.WriteLine("\nSingle ticket price: $9.75");
+    Console.WriteLine("\nWould you like to book a seat? (y/n)");
     readResult = Console.ReadLine();
     string bookSeat = "";
 
@@ -184,30 +184,6 @@ void DisplaySeats(string[,] layout, List<string> bookedSeats)
         readResult = Console.ReadLine();
     }
 }
-
-// void BookSeats()
-// {
-//     Console.Write("Enter the seat you want (e.g. B3): ");
-//     readResult = Console.ReadLine();
-//     if (readResult != null) chosenSeat = readResult.ToUpper();
-
-//     for (int row = 0; row < 5; row++)
-//     {
-//         for (int col = 0; col < 5; col++)
-//         {
-//             if (seats[row, col] == chosenSeat)
-//             {
-//                 seats[row, col] = "X";
-//                 Console.WriteLine("Seat booked successfully!");
-//                 booked = true;
-//             }
-//         }
-//     }
-
-//     if (!booked) Console.WriteLine("That seat is not available.");
-
-//     DisplaySeats(seats);
-// }
 
 void BookSeats(string[,] seats, List<string> bookedSeats)
 {
@@ -232,6 +208,7 @@ void BookSeats(string[,] seats, List<string> bookedSeats)
                     seats[row, col] = "X";
                     bookedSeats.Add(seatChoice);
                     Console.WriteLine($"{seatChoice} booked successfully!");
+                    seatBooked = true;
                     seatFound = true;
                     break;
                 }
@@ -338,7 +315,7 @@ decimal ViewBookingSummary(
     string movie,
     string time,
     List<string> seats,
-    bool movieBooked,
+    bool seatBooked,
     string[] snacks,
     decimal[] snackPrices,
     int[] snackQuantities)
@@ -349,9 +326,9 @@ decimal ViewBookingSummary(
     decimal snackSubtotal = 0m;
 
     // Movie + Ticket
-    if (movieBooked)
+    if (seatBooked)
     {
-        ticketSubtotal = 9.75m;
+        ticketSubtotal = 9.75m * seats.Count;
         Console.WriteLine($"🎬 Movie: {movie}");
         Console.WriteLine($"⏰ Showtime: {time}");
 
