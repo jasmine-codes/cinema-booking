@@ -17,7 +17,7 @@ string menuSelection = "";
 string chosenMovie = "";
 string chosenShowtime = "";
 bool movieBooked = false;
-string chosenSeat = "";
+List<string> chosenSeats = new List<string>();
 bool booked = false;
 decimal grandTotal = 0m;
 
@@ -63,7 +63,7 @@ do
             break;
 
         case "2":
-            DisplaySeats(seats);
+            DisplaySeats(seats, chosenSeats);
             break;
 
         case "3":
