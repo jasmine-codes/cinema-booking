@@ -158,7 +158,7 @@ void ShowMovies(string[] titles, string[][] showtimes)
     return (chosenMovie, chosenShowtime);
 }
 
-void DisplaySeats(string[,] layout)
+void DisplaySeats(string[,] layout, List<string> bookedSeats)
 {
     for (int row = 0; row < layout.GetLength(0); row++)
     {
@@ -175,9 +175,9 @@ void DisplaySeats(string[,] layout)
 
     if (readResult != null) bookSeat = readResult.ToLower();
 
-    if (readResult == "y")
+    if (bookSeat == "y")
     {
-        BookSeats();
+        BookSeats(layout, bookedSeats);
     }
     else
     {
@@ -186,28 +186,40 @@ void DisplaySeats(string[,] layout)
     }
 }
 
-void BookSeats()
+// void BookSeats()
+// {
+//     Console.Write("Enter the seat you want (e.g. B3): ");
+//     readResult = Console.ReadLine();
+//     if (readResult != null) chosenSeat = readResult.ToUpper();
+
+//     for (int row = 0; row < 5; row++)
+//     {
+//         for (int col = 0; col < 5; col++)
+//         {
+//             if (seats[row, col] == chosenSeat)
+//             {
+//                 seats[row, col] = "X";
+//                 Console.WriteLine("Seat booked successfully!");
+//                 booked = true;
+//             }
+//         }
+//     }
+
+//     if (!booked) Console.WriteLine("That seat is not available.");
+
+//     DisplaySeats(seats);
+// }
+
+void BookSeats(string[,] seats, List<string> bookedSeats)
 {
-    Console.Write("Enter the seat you want (e.g. B3): ");
-    readResult = Console.ReadLine();
-    if (readResult != null) chosenSeat = readResult.ToUpper();
-
-    for (int row = 0; row < 5; row++)
+    while (true)
     {
-        for (int col = 0; col < 5; col++)
-        {
-            if (seats[row, col] == chosenSeat)
-            {
-                seats[row, col] = "X";
-                Console.WriteLine("Seat booked successfully!");
-                booked = true;
-            }
-        }
+        Console.Write("Enter seat to book (or 0 to finish): ");
+        readResult = Console.ReadLine();
+        string seatChoice = "";
+
+        if (readResult != null) seatChoice = readResult.ToUpper();
     }
-
-    if (!booked) Console.WriteLine("That seat is not available.");
-
-    DisplaySeats(seats);
 }
 
 void DisplaySnackMenu(string[] names, decimal[] prices)
