@@ -219,6 +219,22 @@ void BookSeats(string[,] seats, List<string> bookedSeats)
         string seatChoice = "";
 
         if (readResult != null) seatChoice = readResult.ToUpper();
+
+        if (seatChoice == "0") break;
+
+        bool seatFound = false;
+
+        for (int row = 0; row < seats.GetLength(0); row++)
+        {
+            for (int col = 0; col < seats.GetLength(1); col++)
+            {
+                if (seats[row, col] == seatChoice)
+                {
+                    seats[row, col] = "X";
+                    
+                }
+            }
+        }
     }
 }
 
