@@ -231,10 +231,25 @@ void BookSeats(string[,] seats, List<string> bookedSeats)
                 if (seats[row, col] == seatChoice)
                 {
                     seats[row, col] = "X";
-                    
+                    bookedSeats.Add(seatChoice);
+                    Console.WriteLine($"{seatChoice} booked successfully!");
+                    seatFound = true;
+                    break;
                 }
             }
+            if (seatFound) break;
         }
+
+        if (!seatFound) Console.WriteLine("That seat is not available or already booked. Try again.");
+    }
+
+    if (bookedSeats.Count == 0)
+    {
+        Console.WriteLine("\nNo seats were booked.");
+    }
+    else
+    {
+        Console.WriteLine($"You booked {bookedSeats.Count} seat(s): {string.Join(", ", bookedSeats)}");
     }
 }
 
