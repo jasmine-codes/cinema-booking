@@ -18,7 +18,6 @@ string chosenMovie = "";
 string chosenShowtime = "";
 bool movieBooked = false;
 List<string> chosenSeats = new List<string>();
-bool booked = false;
 decimal grandTotal = 0m;
 
 //initialise seats
@@ -71,7 +70,7 @@ do
             break;
 
         case "4":
-            ViewBookingSummary(chosenMovie, chosenShowtime, chosenSeat, movieBooked, snacks, snackPrices, snackQuantities);
+            ViewBookingSummary(chosenMovie, chosenShowtime, chosenSeats, movieBooked, snacks, snackPrices, snackQuantities);
             break;
 
         case "5":
@@ -251,6 +250,9 @@ void BookSeats(string[,] seats, List<string> bookedSeats)
     {
         Console.WriteLine($"You booked {bookedSeats.Count} seat(s): {string.Join(", ", bookedSeats)}");
     }
+
+    Console.WriteLine("Press Enter to continue");
+    Console.ReadLine();
 }
 
 void DisplaySnackMenu(string[] names, decimal[] prices)
@@ -335,7 +337,7 @@ decimal OrderSnacks(string[] names, decimal[] prices, int[] quantities)
 decimal ViewBookingSummary(
     string movie,
     string time,
-    string seat,
+    List<string> seats,
     bool movieBooked,
     string[] snacks,
     decimal[] snackPrices,
@@ -352,7 +354,16 @@ decimal ViewBookingSummary(
         ticketSubtotal = 9.75m;
         Console.WriteLine($"🎬 Movie: {movie}");
         Console.WriteLine($"⏰ Showtime: {time}");
-        Console.WriteLine($"💺 Seat: {seat}");
+
+        if (chosenSeats.Count > 0)
+        {
+            Console.WriteLine($"💺 Seats: {string.Join(", ", chosenSeats)}");
+        }
+        else
+        {
+            Console.WriteLine("💺 No seats selected.");
+        }
+
         Console.WriteLine($"Ticket Price: ${ticketSubtotal:F2}\n");
     }
     else
