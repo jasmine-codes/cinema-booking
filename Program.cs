@@ -406,4 +406,14 @@ decimal ApplyMembershipDiscount(decimal subtotal)
 
 }
 
+void ExitApp()
+{
+    Console.Write("Do you wish to exit the application? (y/n): ");
+    readResult = Console.ReadLine();
+
+    if (readResult != null) readResult.ToLower();
+
+    
+}
+
 #endregion
