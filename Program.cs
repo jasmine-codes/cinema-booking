@@ -76,6 +76,10 @@ do
         case "5":
             ApplyMembershipDiscount(grandTotal);
             break;
+
+        case "6":
+            ExitApp();
+            break;
     }
 
 } while (menuSelection != "exit");
